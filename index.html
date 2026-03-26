@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>抢救车使用手册 · 备考速记</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0a2342;
+  --blue: #1a4a8a;
+  --mid-blue: #2563b0;
+  --teal: #0891b2;
+  --teal-light: #e0f2fe;
+  --white: #ffffff;
+  --off-white: #f0f6ff;
+  --gray-100: #e8eef8;
+  --gray-200: #c8d8ee;
+  --gray-500: #64748b;
+  --gray-700: #334155;
+  --gold: #d4a017;
+  --success: #059669;
+  --danger: #dc2626;
+  --text: #0f172a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans SC', sans-serif;
+  background: var(--off-white);
+  color: var(--text);
+  min-height: 100vh;
+  background-image: 
+    radial-gradient(ellipse at 10% 20%, rgba(26,74,138,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 80%, rgba(8,145,178,0.06) 0%, transparent 50%);
+}
+
+/* ─── HEADER ─── */
+.header {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, var(--mid-blue) 100%);
+  color: white;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; left: -30px;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.header-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 32px 24px 28px;
+  position: relative;
+  z-index: 1;
+}
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.header h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(20px, 4vw, 28px);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.header p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  font-weight: 300;
+}
+
+/* ─── NAV TABS ─── */
+.nav-tabs {
+  background: var(--navy);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.nav-tabs-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  padding: 0 24px;
+}
+.nav-tab {
+  padding: 14px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.nav-tab:hover { color: rgba(255,255,255,0.8); }
+.nav-tab.active {
+  color: white;
+  border-bottom-color: var(--teal);
+}
+
+/* ─── MAIN CONTENT ─── */
+.content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 28px 24px 60px;
+}
+
+/* ─── SECTION: HOME ─── */
+.home-intro {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid var(--gray-100);
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.home-intro-icon {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  background: var(--teal-light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.home-intro h3 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 3px;
+}
+.home-intro p { font-size: 12.5px; color: var(--gray-500); line-height: 1.5; }
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+.category-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid var(--gray-100);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.22s;
+  position: relative;
+  overflow: hidden;
+}
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  border-radius: 4px 0 0 4px;
+}
+.category-card:hover {
+  border-color: var(--gray-200);
+  box-shadow: 0 4px 20px rgba(10,35,66,0.10);
+  transform: translateY(-2px);
+}
+.cat-0::before { background: var(--mid-blue); }
+.cat-1::before { background: var(--teal); }
+.cat-2::before { background: #7c3aed; }
+.cat-3::before { background: #d97706; }
+.cat-4::before { background: var(--success); }
+
+.category-emoji { font-size: 24px; margin-bottom: 10px; }
+.category-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.category-sub { font-size: 11.5px; color: var(--gray-500); margin-bottom: 12px; }
+.category-count {
+  font-size: 11px;
+  color: var(--mid-blue);
+  font-weight: 500;
+  background: var(--teal-light);
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* ─── SECTION: FLASHCARDS ─── */
+.flashcard-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--gray-700);
+  transition: all 0.18s;
+}
+.back-btn:hover { background: var(--gray-100); }
+.flashcard-section-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.flashcard-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.card-progress {
+  font-size: 12px;
+  color: var(--gray-500);
+}
+.progress-bar-wrap {
+  flex: 1;
+  height: 4px;
+  background: var(--gray-100);
+  border-radius: 2px;
+  margin: 0 16px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal), var(--mid-blue));
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.flashcard-container {
+  perspective: 1200px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.flashcard {
+  width: 100%;
+  min-height: 220px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 14px;
+}
+.flashcard.flipped { transform: rotateY(180deg); }
+.card-face {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  min-height: 220px;
+  backface-visibility: hidden;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 28px;
+  text-align: center;
+}
+.card-front {
+  background: white;
+  border: 1.5px solid var(--gray-100);
+  box-shadow: 0 2px 20px rgba(10,35,66,0.07);
+}
+.card-back {
+  background: linear-gradient(145deg, var(--navy) 0%, var(--blue) 100%);
+  transform: rotateY(180deg);
+  color: white;
+}
+.card-label {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--teal);
+  margin-bottom: 14px;
+}
+.card-back .card-label { color: rgba(255,255,255,0.5); }
+.card-question {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.7;
+}
+.card-answer {
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.92);
+}
+.card-hint {
+  margin-top: 18px;
+  font-size: 11px;
+  color: var(--gray-500);
+}
+.card-back .card-hint { color: rgba(255,255,255,0.35); }
+
+.card-placeholder { min-height: 220px; }
+
+.flashcard-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.ctrl-btn {
+  flex: 1;
+  max-width: 140px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1.5px solid var(--gray-200);
+  background: white;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-700);
+  transition: all 0.18s;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+.ctrl-btn:hover { background: var(--gray-100); }
+.ctrl-btn.primary {
+  background: var(--mid-blue);
+  border-color: var(--mid-blue);
+  color: white;
+}
+.ctrl-btn.primary:hover { background: var(--blue); }
+
+/* All cards list below */
+.cards-list {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card-list-item {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 10px;
+  padding: 14px 18px;
+  cursor: pointer;
+  transition: all 0.18s;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.card-list-item:hover { border-color: var(--gray-200); box-shadow: 0 2px 10px rgba(10,35,66,0.07); }
+.card-num {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--teal-light);
+  color: var(--teal);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.card-list-q { font-size: 13.5px; color: var(--navy); font-weight: 500; line-height: 1.5; }
+.card-list-a { font-size: 12px; color: var(--gray-500); margin-top: 4px; line-height: 1.5; display: none; }
+.card-list-item.open .card-list-a { display: block; }
+
+/* ─── SECTION: QUIZ ─── */
+.quiz-start {
+  text-align: center;
+  padding: 40px 20px;
+}
+.quiz-start h2 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 22px;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.quiz-start p { color: var(--gray-500); font-size: 14px; margin-bottom: 24px; }
+.quiz-select-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+.quiz-cat-btn {
+  padding: 14px 16px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  transition: all 0.18s;
+  font-family: 'Noto Sans SC', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.quiz-cat-btn:hover, .quiz-cat-btn.selected {
+  border-color: var(--mid-blue);
+  background: var(--teal-light);
+  color: var(--mid-blue);
+}
+.start-quiz-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background: linear-gradient(135deg, var(--mid-blue), var(--teal));
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Noto Sans SC', sans-serif;
+  transition: opacity 0.18s;
+}
+.start-quiz-btn:hover { opacity: 0.9; }
+
+.quiz-question-wrap {
+  display: none;
+}
+.quiz-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.quiz-info { font-size: 13px; color: var(--gray-500); }
+.quiz-score-badge {
+  background: var(--teal-light);
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.quiz-q-card {
+  background: white;
+  border: 1.5px solid var(--gray-100);
+  border-radius: 14px;
+  padding: 28px 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 20px rgba(10,35,66,0.06);
+}
+.quiz-q-tag {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.quiz-q-text {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 16px;
+  color: var(--navy);
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.quiz-option {
+  padding: 13px 18px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  font-size: 13.5px;
+  color: var(--gray-700);
+  transition: all 0.18s;
+  font-family: 'Noto Sans SC', sans-serif;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.quiz-option:hover:not(.disabled) { border-color: var(--mid-blue); background: var(--teal-light); }
+.quiz-option.correct { border-color: var(--success); background: #f0fdf4; color: var(--success); }
+.quiz-option.wrong { border-color: var(--danger); background: #fef2f2; color: var(--danger); }
+.quiz-option.disabled { cursor: not-allowed; }
+.opt-letter {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--gray-100);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+  color: var(--gray-700);
+}
+.quiz-option.correct .opt-letter { background: var(--success); color: white; }
+.quiz-option.wrong .opt-letter { background: var(--danger); color: white; }
+
+.quiz-explanation {
+  display: none;
+  background: var(--off-white);
+  border-left: 3px solid var(--teal);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 16px;
+  font-size: 13px;
+  color: var(--gray-700);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.quiz-explanation.show { display: block; }
+.quiz-explanation strong { color: var(--navy); }
+
+.quiz-next-btn {
+  display: none;
+  width: 100%;
+  padding: 13px;
+  background: var(--mid-blue);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Noto Sans SC', sans-serif;
+  transition: background 0.18s;
+}
+.quiz-next-btn:hover { background: var(--blue); }
+.quiz-next-btn.show { display: block; }
+
+/* Result screen */
+.quiz-result {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+}
+.result-circle {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: 'Noto Serif SC', serif;
+  position: relative;
+}
+.result-circle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(var(--teal) var(--pct), var(--gray-100) 0);
+}
+.result-inner {
+  position: relative;
+  z-index: 1;
+  width: 96px; height: 96px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.result-pct { font-size: 24px; font-weight: 700; color: var(--navy); }
+.result-label { font-size: 11px; color: var(--gray-500); }
+.result-message {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 20px;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.result-sub { font-size: 14px; color: var(--gray-500); margin-bottom: 28px; }
+.result-actions { display: flex; gap: 12px; justify-content: center; }
+.res-btn {
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: 1.5px solid var(--gray-200);
+  background: white;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-700);
+  transition: all 0.18s;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+.res-btn.primary {
+  background: var(--mid-blue);
+  border-color: var(--mid-blue);
+  color: white;
+}
+.res-btn:hover { opacity: 0.85; }
+
+/* HIDDEN */
+.hidden { display: none !important; }
+
+/* Responsive */
+@media (max-width: 480px) {
+  .nav-tab { padding: 12px 12px; font-size: 12px; }
+  .flashcard-controls { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-badge">🚑 急救护理 · 院内培训</div>
+    <h1>抢救车使用手册 · 备考速记</h1>
+    <p>大连医科大学附属第二医院 · 护理部医务部药学部 · 2023年第二版</p>
+  </div>
+</div>
+
+<div class="nav-tabs">
+  <div class="nav-tabs-inner">
+    <div class="nav-tab active" onclick="showSection('home')">📋 知识点</div>
+    <div class="nav-tab" onclick="showSection('cards')">🃏 闪卡</div>
+    <div class="nav-tab" onclick="showSection('quiz')">🎯 自测</div>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ══════════════ HOME ══════════════ -->
+  <div id="section-home">
+    <div class="home-intro">
+      <div class="home-intro-icon">💡</div>
+      <div>
+        <h3>本册核心：抢救车五大模块</h3>
+        <p>点击各模块卡片，进入该主题的闪卡学习；或切换至「自测」模式进行随机出题。</p>
+      </div>
+    </div>
+    <div class="categories-grid" id="categories-grid"></div>
+  </div>
+
+  <!-- ══════════════ FLASHCARDS ══════════════ -->
+  <div id="section-cards" class="hidden">
+    <div class="flashcard-header">
+      <button class="back-btn" onclick="showSection('home')">← 返回</button>
+      <div class="flashcard-section-title" id="fc-title"></div>
+    </div>
+
+    <div class="flashcard-nav">
+      <span class="card-progress" id="fc-progress">1 / 1</span>
+      <div class="progress-bar-wrap"><div class="progress-bar" id="fc-bar" style="width:0%"></div></div>
+      <span style="font-size:12px;color:var(--gray-500)">点击卡片翻转</span>
+    </div>
+
+    <div class="flashcard-container" onclick="flipCard()">
+      <div class="flashcard" id="fc-card">
+        <div class="card-face card-front">
+          <div class="card-label">问题</div>
+          <div class="card-question" id="fc-question"></div>
+          <div class="card-hint">👆 点击查看答案</div>
+        </div>
+        <div class="card-face card-back">
+          <div class="card-label">答案</div>
+          <div class="card-answer" id="fc-answer"></div>
+          <div class="card-hint">👆 点击返回问题</div>
+        </div>
+      </div>
+      <div class="card-placeholder"></div>
+    </div>
+
+    <div class="flashcard-controls">
+      <button class="ctrl-btn" onclick="prevCard()">← 上一张</button>
+      <button class="ctrl-btn primary" onclick="nextCard()">下一张 →</button>
+    </div>
+
+    <div class="cards-list" id="fc-list"></div>
+  </div>
+
+  <!-- ══════════════ QUIZ ══════════════ -->
+  <div id="section-quiz" class="hidden">
+    <!-- Start screen -->
+    <div id="quiz-start">
+      <div class="quiz-start">
+        <h2>🎯 自测模式</h2>
+        <p>选择要考核的场景（可多选），开始随机出题</p>
+        <div class="quiz-select-grid" id="quiz-cat-select"></div>
+        <button class="start-quiz-btn" onclick="startQuiz()">开始自测</button>
+      </div>
+    </div>
+
+    <!-- Question screen -->
+    <div class="quiz-question-wrap" id="quiz-question-wrap">
+      <div class="quiz-top">
+        <span class="quiz-info" id="quiz-progress-text">第 1 题 / 共 10 题</span>
+        <span class="quiz-score-badge" id="quiz-score-badge">得分: 0</span>
+      </div>
+      <div class="progress-bar-wrap" style="margin-bottom:20px">
+        <div class="progress-bar" id="quiz-progress-bar" style="width:0%"></div>
+      </div>
+
+      <div class="quiz-q-card">
+        <div class="quiz-q-tag" id="quiz-cat-tag">场景</div>
+        <div class="quiz-q-text" id="quiz-q-text">问题</div>
+      </div>
+
+      <div class="quiz-options" id="quiz-options"></div>
+      <div class="quiz-explanation" id="quiz-explanation"></div>
+      <button class="quiz-next-btn" id="quiz-next-btn" onclick="nextQuizQuestion()">下一题 →</button>
+    </div>
+
+    <!-- Result screen -->
+    <div class="quiz-result" id="quiz-result">
+      <div class="result-circle">
+        <div class="result-inner">
+          <div class="result-pct" id="result-pct">0%</div>
+          <div class="result-label">正确率</div>
+        </div>
+      </div>
+      <div class="result-message" id="result-message">完成自测！</div>
+      <div class="result-sub" id="result-sub"></div>
+      <div class="result-actions">
+        <button class="res-btn" onclick="resetQuiz()">重新选题</button>
+        <button class="res-btn primary" onclick="retryQuiz()">再来一次</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /content -->
+
+<script>
+// ════════════════════════════════════════════
+// DATA
+// ════════════════════════════════════════════
+const categories = [
+  {
+    id: 0,
+    emoji: '📋',
+    title: '抢救车管理制度',
+    sub: '五定管理 · 三无三及时',
+    cards: [
+      { q: '抢救车"五定管理"包括哪五定？', a: '① 定点放置\n② 定专人保管\n③ 定期检查\n④ 定期消毒灭菌\n⑤ 定数量种类' },
+      { q: '抢救车药品及物品要做到"三无"和"三及时"，分别是什么？', a: '"三无"：无过期、无变质、无失效\n"三及时"：及时检查、及时维修、及时补充' },
+      { q: '抢救车使用频次较多的科室采用什么管理方式？', a: '采用"每日交接"的方式进行管理，护士长每周一次检查抢救车管理情况并做好记录。' },
+      { q: '抢救车使用频次较少的科室，采用什么管理方式？', a: '采用一次性锁闭管理。每月启封一次，指定负责人和护士长共同对药品及物品进行检查、整理及增补，并封闭签字。' },
+      { q: '一次性锁闭管理中，抢救急危重症患者时如何操作？', a: '开启一次性锁取用药品及物品。抢救结束后及时检查、整理、增补用物并记录。如夜间使用，及时整理、补充，第二日由指定负责人和护士长双人再次核对，做好记录，封闭并签字。' },
+      { q: '抢救车封闭时如何确认一次性锁扣的完整性？', a: '确认一次性锁扣卡住后将锁扣编号记录于《抢救车物品交接本》上并双人签名，每班检查一次性锁扣的完整性。' },
+      { q: '抢救车上允许放置哪些物品？', a: '抢救车上不允许放置任何物品（除颤仪、氧气袋除外），配有胸外心脏按压板、《抢救车使用手册》、药品及物品放置示意图、抢救工作协作定位图、除颤仪分布图、《抢救车物品交接本》等。' },
+      { q: '药品近效期（6个月内）应如何处理？失效期（1个月前）呢？', a: '近效期（6个月内）药品应及时使用或更换；失效期（1个月前）及时更换。' },
+      { q: '抢救车内的药品及物品是否可以外借或作为常规使用？', a: '不得外借也不作为常规使用，如有物品缺失做好交接班。' },
+      { q: '护理部对各科室抢救车进行检查的频率？', a: '护理部每季度对各科室抢救车进行检查。' }
+    ]
+  },
+  {
+    id: 1,
+    emoji: '💊',
+    title: '常用抢救药品',
+    sub: '药理 · 适应症 · 不良反应',
+    cards: [
+      { q: '盐酸肾上腺素（A级高危）的主要作用机制？', a: '对α和β受体都有激动作用：心肌收缩力增加、心率加快，使心肌耗氧量增加；使皮肤、黏膜及内脏小血管收缩；冠状血管及骨骼肌血管则扩张。此外还有松弛支气管和胃肠道平滑肌的作用。' },
+      { q: '盐酸肾上腺素的主要适应症？', a: '① 主要用于因支气管痉挛所致的严重呼吸困难\n② 可迅速缓解药物等引起的过敏性休克\n③ 心搏骤停时进行心肺复苏的抢救药物' },
+      { q: '盐酸肾上腺素的主要禁忌症？', a: '高血压、器质性心脏病、冠状动脉疾病、糖尿病、甲状腺功能亢进症、洋地黄中毒、外伤性及出血性休克、心源性哮喘等患者禁用。' },
+      { q: '重酒石酸去甲肾上腺素（A级高危）的主要作用机制？', a: '主要激动α受体，对β受体激动作用很弱，具有很强的血管收缩作用，使全身小动脉与小静脉都收缩（但冠状血管扩张），外周阻力增高，血压上升。' },
+      { q: '重酒石酸去甲肾上腺素的主要适应症？', a: '作为急救时补充血容量的辅助治疗，维持冠状动脉灌注；用于各种休克引起的低血压；也用于椎管内阻滞时的低血压及心搏骤停复苏后血压维持。' },
+      { q: '去甲肾上腺素药液外渗的危害及处理？', a: '药液外渗可引起局部组织坏死，输注时应选择大静脉，输注过程中应频繁检查注射部位。' },
+      { q: '盐酸异丙肾上腺素（A级高危）的主要适应症？', a: '① 心源性或感染性休克\n② 房室传导阻滞\n③ 心搏骤停' },
+      { q: '盐酸异丙肾上腺素三度房室传导阻滞时的特殊用法？', a: '心率不及40次/分时，应将本品0.5～1mg加入5%葡萄糖注射液200～300ml内缓慢静脉滴注。' },
+      { q: '硫酸阿托品（0.5mg/1ml）的主要作用机制？', a: '拮抗M胆碱受体的抗胆碱药：①解除平滑肌的痉挛（包括解除血管痉挛，改善微循环）；②抑制腺体分泌；③解除迷走神经对心脏的抑制，使心率加快；④散大瞳孔及升高眼压，调节麻痹；⑤兴奋或者抑制中枢神经系统，具有一定剂量依赖性。' },
+      { q: '硫酸阿托品的主要适应症？', a: '① 抢救感染中毒性休克\n② 迷走神经过度兴奋所致的窦房阻滞、房室阻滞等缓慢型心律失常\n③ 抢救有机农药中毒\n④ 各种内脏绞痛\n⑤ 全麻前给药、严重盗汗和流涎症\n⑥ 眼科用药：如角膜炎等' },
+      { q: '盐酸多巴胺（A级高危）小、中、大剂量的主要作用区别？', a: '小剂量(0.5～2μg/kg/min)：使肠系及肾小球滤过率增高\n中剂量(2～10μg/kg/min)：正性肌力作用，心搏量增加，收缩压升高\n大剂量(>10μg/kg/min)：外周阻力增高，收缩压及舒张压均升高，肾血流量及尿量减少' },
+      { q: '尼可刹米（中枢神经系统兴奋药）的主要适应症？', a: '中枢性呼吸抑制及各种原因引起的呼吸抑制。' },
+      { q: '盐酸洛贝林（中枢神经系统兴奋药）的主要适应症？', a: '① 各种原因引起的中枢性呼吸抑制\n② 新生儿窒息\n③ 一氧化碳、阿片中毒等' },
+      { q: '2%盐酸利多卡因（B级高危）的主要作用机制？', a: '① 阻断神经冲动产生和传导所需的Na+通道，产生局部麻醉作用\n② 大剂量时促进心肌细胞内K+外流，降低心肌的自律性\n③ 药液浓度进一步升高，可引起心脏传导速度减慢、房室传导阻滞，抑制心肌收缩力和使心排血量下降' },
+      { q: '去乙酰毛花苷（西地兰，A级高危）的主要适应症？', a: '① 主要用于心力衰竭（作用较快，适用于急性心力衰竭或慢性心力衰竭急性加重）\n② 控制伴快速心室率的心房颤动、心房扑动患者的心室率' },
+      { q: '洋地黄中毒最常见的心律失常表现？', a: '以室性早搏最为常见，其次为房室传导阻滞、室性心动过速、室上速、室颤等；黄视（中毒表现）或视力模糊、腹泻、中枢神经系统反应也可出现。' },
+      { q: '盐酸胺碘酮（A级高危）的主要适应症？', a: '① 房性心律失常伴快速室性心律\n② W-P-W综合征的心动过速\n③ 严重的室性心律失常\n④ 体外除颤无效的室颤相关心脏停搏的心肺复苏' },
+      { q: '地西泮（B级高危）的主要作用？', a: '中枢神经系统抑制药：①镇静催眠作用；②遗忘作用；③抗惊厥作用；④骨骼肌松弛作用。' },
+      { q: '葡萄糖酸钙（1g/10ml）的主要适应症？', a: '① 急性低钙血症\n② 解救镁中毒、氟中毒' },
+      { q: '50%葡萄糖（A级高危）的主要适应症？', a: '① 补充能量\n② 低糖血症\n③ 高钾血症\n④ 饥饿性酮症\n⑤ 组织脱水剂\n⑥ 配制腹膜透析液' },
+      { q: '硝酸异山梨酯（异舒吉）的主要适应症？', a: '① 不稳定型心绞痛、变异型心绞痛\n② 急性心肌梗死\n③ 急性左心衰竭' },
+      { q: '地塞米松（5mg/1ml）的主要适应症？', a: '用于过敏性及自身免疫性炎症性疾病，如类风湿关节炎、严重支气管哮喘、溃疡性结肠炎、急性白血病等。' },
+      { q: '甘露醇（20g/100ml袋）的两大主要作用机制？', a: '① 组织脱水作用：提高血浆渗透压，组织内水分进入血管内，减轻组织水肿，降低眼内压、颅内压、脑脊液容量及压力\n② 利尿作用：增加血容量后，促进前列腺素分泌，扩张肾血管，肾小球滤过率升高' },
+      { q: '5%碳酸氢钠（12.5g/250ml袋）的主要适应症？', a: '① 治疗代谢性酸中毒\n② 碱化尿液\n③ 制酸' }
+    ]
+  },
+  {
+    id: 2,
+    emoji: '🫁',
+    title: '简易呼吸器',
+    sub: '组成 · 检测 · 使用 · 维护',
+    cards: [
+      { q: '简易呼吸器由哪四个部分组成？', a: '呼吸气囊、吸氧面罩、储氧袋、六个阀（储氧安全阀、储气阀、进气阀、压力安全阀、单向阀/鸭嘴阀、呼气阀）' },
+      { q: '简易呼吸器吸气过程的原理？', a: '挤压球体产生正压，鸭嘴阀（F）开放，进气阀（E）关闭，同时鸭嘴阀（F）向下移动，堵住呼气阀G，气体进入人体。' },
+      { q: '简易呼吸器呼气过程的原理？', a: '松开球体产生负压，鸭嘴阀（F）关闭，同时上移，呼气阀（G）打开，气体呼出，进气阀（E）开放，气体进入球体。' },
+      { q: '简易呼吸器性能检测七步法（第一、二步）？', a: '第一步：挤压球体，堵塞通气口，球体迅速回弹，进气阀通畅。\n第二步：堵塞通气口，关闭压力安全阀，按压球体，见球体不可下压，进气阀无漏气。打开压力安全阀，按压球体，见气体可从压力安全阀排出，压力安全阀正常。' },
+      { q: '简易呼吸器性能检测七步法（第三至五步）？', a: '第三步：连接储氧袋于通气口，挤压球体，见储氧袋充盈，鸭嘴阀开关方向正确（朝向患者），通气方向正确。\n第四步：充盈储氧袋，挤压储氧袋，见呼气阀瓣膜上下摆动，呼出气体方向正确。\n第五步：将储氧袋接上储气阀，并接在通气口，挤压球体，见储氧袋排空，储氧安全阀功能良好。' },
+      { q: '简易呼吸器性能检测七步法（第六、七步）？', a: '第六步：堵住储氧阀出口，挤压储氧袋，气体自储氧安全阀溢出，当气囊内气体压力过大时，气体可从储氧安全阀排出。\n第七步：挤压球体，堵住入气口，见球体缓慢回弹，氧气连接头口通畅。' },
+      { q: '无孔面罩充气标准？成人和小儿各是多少？', a: '无孔面罩气囊内压力：20～30mmHg\n成人面罩充气：110～120ml\n小儿面罩充气：50～60ml' },
+      { q: '有氧条件下使用简易呼吸器，应调节氧流量至多少？储氧袋时氧浓度可达多少？', a: '连接氧气，调节氧流量（10L/min），使储氧袋充盈（有储氧袋时，氧浓度为95%～99%）。' },
+      { q: '单人操作简易呼吸器使用EC手法，双人操作使用什么手法？', a: '单人操作：EC手法\n双人操作：双EC手法' },
+      { q: '成人无自主呼吸时，简易呼吸器通气频率是多少？', a: '无自主呼吸成人患者，每6秒给予一次人工通气（即10次/min）。' },
+      { q: '简易呼吸器每次挤压通气量标准？1L与2L呼吸气囊各挤压多少？', a: '通气量以见到胸廓起伏即可，400～600ml（成人）。\n1L呼吸气囊：挤压1/2～2/3\n2L呼吸气囊：挤压1/3' },
+      { q: '简易呼吸器消毒方法？使用后储氧袋如何消毒？', a: '简易呼吸器一人一用一消毒，使用后储氧袋用75%酒精擦试，其余各部件可拆卸部分充分拆卸，排出无孔面罩中的气体，流动水冲洗后使用500mg/L含氯消毒液浸泡消毒，作用时间30分钟，使用流动水冲洗干净后，用无菌巾擦干。' },
+      { q: '特殊感染患者使用简易呼吸器后，如何消毒？', a: '进行环氧乙烷灭菌消毒。' }
+    ]
+  },
+  {
+    id: 3,
+    emoji: '⚡',
+    title: '除颤仪操作',
+    sub: '原理 · 适应证 · 使用 · 维护',
+    cards: [
+      { q: '除颤仪的工作原理？', a: '在极短暂的时间内给予心脏通入高压强电流，使心肌瞬间同时除极，消除异位快速心律失常，使之恢复窦性心律。' },
+      { q: '非同步电复律（手动除颤）用于哪些心律失常？', a: '室颤、室扑、无脉性室速。（室颤为绝对适应证，一旦发生应立即予以非同步电复律）' },
+      { q: '同步电复律用于哪些心律失常？', a: '房颤、房扑、室上速、室速。' },
+      { q: '成人同步电复律：房颤的单相波和双向波能量选择？', a: '房颤：单相波200J，双向波120～200J' },
+      { q: '成人电复律：室颤和室扑的能量选择？', a: '非同步，室颤和室扑：单相波360J，双向波120～200J' },
+      { q: '除颤电极板（A/S）放置位置？', a: 'A（Apex）电极板：放在左乳头外下方或左腋前线第5肋间（心尖部）\nS（Sternum）电极板：放在胸骨右缘锁骨下或2～3肋间（心底部）' },
+      { q: '除颤操作前，如何正确涂导电糊？', a: '均匀涂抹导电糊/4～6层生理盐水纱布，两电极板距离>10cm，并保持患者两电极之间的皮肤干燥，防止导电糊或盐水外溢相连接导致短路。' },
+      { q: '除颤放电前的安全确认步骤？', a: '充电完成后，高喊"大家离开"，并查看自己与病床周围，确保自己及周围人员与患者及病床无直接或间接接触，再双手拇指按压电极板"放电"按钮进行电击。' },
+      { q: '放电后观察什么？心搏骤停复律后立即做什么？', a: '放电后观察10s心电图情况，了解复律成功与否。心搏骤停复律后，立即给予5个循环的胸外心脏按压。' },
+      { q: '除颤时，安装起搏器的患者有何特殊注意事项？', a: '电极板距离起搏器至少10cm。' },
+      { q: '除颤仪不得使用哪些消毒方式？', a: '不能使用高温（如高压灭菌）、电子束、伽马射线、超声波对机器进行消毒。' },
+      { q: '除颤仪新电池使用前应连续充电多少小时？', a: '新电池在使用前应连续充电24小时。' },
+      { q: '除颤仪电池放电后，充到90%容量需要多少时间？完全充满需要多久？', a: '充到90%容量：约3小时（25℃时），指示灯从琥珀色变为绿色；完全充满：变为绿色后再充电12小时（25℃时）。' },
+      { q: '除颤并发症：皮肤灼伤的原因？', a: '局部皮肤与电极板接触不良。轻者无需特殊处理，严重者按照中、重度烧伤处理。' },
+      { q: '除颤并发症：心肌损伤的表现？', a: '心电图出现ST-T波改变，血液中的心肌酶升高，约持续数小时至数天。' }
+    ]
+  },
+  {
+    id: 4,
+    emoji: '❤️',
+    title: '心肺脑复苏（CPR）',
+    sub: '生存链 · 操作流程 · ACLS',
+    cards: [
+      { q: '"生存链"由哪三部分组成？', a: '基础生命支持（BLS）、高级心血管生命支持（ACLS）和心搏骤停后治疗，生存链中各个环节必须环环相扣。' },
+      { q: '院内心搏骤停（IHCA）成人生存链的六个环节？', a: '及早识别与预防 → 启动应急反应系统 → 高质量CPR → 除颤 → 心搏骤停复苏自主循环治疗 → 康复' },
+      { q: '院外心搏骤停（OHCA）成人生存链的环节？', a: '启动应急反应系统 → 高质量CPR → 除颤 → 高级心肺复苏 → 心搏骤停复苏自主循环后治疗 → 康复' },
+      { q: 'CPR高质量的标准？', a: '① 用力（按压深度至少5cm）并快速（100～120次/min）按压，并尽量避免完全回弹\n② 尽量减少按压中断\n③ 避免过度通气\n④ 每2min换一次按压人员\n⑤ 如果没有高级气道，应采用30:2的按压—通气比' },
+      { q: '成人胸外按压的深度和频率？', a: '按压深度至少为5cm；频率100～120次/min。' },
+      { q: '婴儿（小于1岁）胸外按压方法？', a: '两手指按压：胸骨下1/2处；或双手环抱法：双拇指按压，按压深度至少4cm，频率100～120次/min。' },
+      { q: '儿童（1～8岁）胸外按压方法？', a: '单手按压：按压胸骨下1/2处；按压深度至少5cm（儿童约为胸廓前后径的1/3约5cm），频率100～120次/min。' },
+      { q: '高级气道建立后，人工通气频率？', a: '建立高级气道（气管插管等）后：每6秒进行1次人工通气（10次/min），并持续进行胸外心脏按压（不再30:2）。' },
+      { q: 'ACLS中肾上腺素的给药方案？', a: '肾上腺素静脉/骨内注射剂量：每3～5min 1mg；胺碘酮首次剂量：300mg，随后推注150mg；或利多卡因首次剂量1～1.5mg/kg，第二剂0.5～0.75mg/kg。' },
+      { q: '可除颤心律（室颤/无脉性室速）的ACLS流程简述？', a: '①CPR→②判断为可电击→③电击→④CPR 2min+静脉/骨内通路→⑤判断→⑥电击→⑦CPR 2min+肾上腺素每3～5min，考虑高级气道→⑧CPR 2min+胺碘酮或利多卡因，治疗可逆因素' },
+      { q: '不可除颤心律（心搏停止/PEA）的ACLS流程简述？', a: '①CPR→②判断不可电击→③CPR 2min+静脉/骨内通路，每3～5min给肾上腺素，考虑高级气道→④CPR 2min，治疗可逆病因→循环判断' },
+      { q: 'CPR"可逆病因"有哪些？（5H5T）', a: '5H：低血容量（Hypovolemia）、缺氧（Hypoxia）、氢离子/酸中毒（Hydrogen ion）、低钾/高钾血症（Hypo/hyperkalemia）、低体温（Hypothermia）\n5T：张力性气胸（Tension pneumothorax）、心包填塞（Tamponade）、毒素（Toxins）、肺血栓/肺栓塞（Thrombosis pulmonary）、冠状动脉血栓（Thrombosis coronary）' },
+      { q: '自主循环恢复（ROSC）的判断标准？', a: '① 脉搏和血压恢复\n② PetCO₂突然持续升高（通常≥40mmHg）\n③ 动脉内监测到的自发性动脉压力波' },
+      { q: 'CPR工作协作定位：各角色职责？', a: 'A位（插管医生/医2）：气道管理，开放气道、气管插管\nB位（护士长/护1）：心电监护、观察病情变化、辅助按压\nC位（护2）：气道清理、配合气管插管、传递物品及药品、抢救记录\nD位（本科室医生/医1）：评估病因、指挥抢救、胸外按压、心脏除颤\nE位（护3）：建立静脉通路、给药、采血、留置导尿' },
+      { q: '抢救车应尽量靠近哪个位置放置？', a: '抢救车尽量靠近护2、护3放置。' }
+    ]
+  }
+];
+
+// ── QUIZ QUESTIONS ──
+const quizQuestions = [
+  // 管理制度
+  { cat: '抢救车管理制度', q: '抢救车"五定管理"不包括以下哪项？', opts: ['A. 定点放置', 'B. 定专人保管', 'C. 定期培训', 'D. 定数量种类'], ans: 2, exp: '五定管理包括：定点放置、定专人保管、定期检查、定期消毒灭菌、定数量种类。"定期培训"不在五定范围内。' },
+  { cat: '抢救车管理制度', q: '抢救车药品"三无"指的是？', opts: ['A. 无过期、无变质、无失效', 'B. 无污染、无破损、无变色', 'C. 无标签、无记录、无封存', 'D. 无外借、无滥用、无缺失'], ans: 0, exp: '"三无"是指无过期、无变质、无失效；"三及时"是及时检查、及时维修、及时补充。' },
+  { cat: '抢救车管理制度', q: '使用频次较少的科室抢救车，每月封闭前由谁共同对药品进行检查？', opts: ['A. 护士长单人', 'B. 指定负责人和护士长双人', 'C. 两名值班护士', 'D. 科主任和护士长'], ans: 1, exp: '使用频次较少的科室，每月启封一次，由指定负责人和护士长双人共同对抢救车内的药品及物品进行检查、整理及增补，并封闭签字。' },
+  { cat: '抢救车管理制度', q: '近效期药品（6个月内）应该怎么处理？', opts: ['A. 继续保留，等到失效', 'B. 及时使用或更换', 'C. 退回药房', 'D. 做好标记备用'], ans: 1, exp: '近效期（6个月内）药品应及时使用或更换；失效期（1个月前）及时更换。医疗垃圾、生活垃圾用后及时清理。' },
+  // 药品
+  { cat: '常用抢救药品', q: '盐酸肾上腺素的主要适应症不包括？', opts: ['A. 严重呼吸困难（支气管痉挛）', 'B. 过敏性休克', 'C. 心搏骤停的心肺复苏', 'D. 高血压急症'], ans: 3, exp: '肾上腺素主要用于：支气管痉挛引起的严重呼吸困难、过敏性休克、心搏骤停的心肺复苏。高血压是其禁忌症，不是适应症。' },
+  { cat: '常用抢救药品', q: '重酒石酸去甲肾上腺素药液外渗会造成什么危害？', opts: ['A. 局部感染', 'B. 局部组织坏死', 'C. 过敏反应', 'D. 静脉炎'], ans: 1, exp: '去甲肾上腺素药液外渗可引起局部组织坏死，输注时应选择大静脉，输注过程中应频繁检查注射部位。' },
+  { cat: '常用抢救药品', q: '盐酸多巴胺大剂量（>10μg/kg/min）的主要作用是？', opts: ['A. 扩张肾血管，增加尿量', 'B. 正性肌力，提升收缩压', 'C. 外周阻力增高，血压升高，肾血流量减少', 'D. 松弛支气管平滑肌'], ans: 2, exp: '多巴胺大剂量(>10μg/kg/min)：外周阻力增高，收缩压及舒张压均升高，肾血流量及尿量减少。小剂量主要扩张肾血管，中剂量正性肌力。' },
+  { cat: '常用抢救药品', q: '去乙酰毛花苷（西地兰）最常见的毒性反应（中毒）是哪种心律失常？', opts: ['A. 窦性心动过缓', 'B. 室性早搏', 'C. 房室传导阻滞', 'D. 心房扑动'], ans: 1, exp: '洋地黄中毒的心律失常以室性早搏最为常见，其次为房室传导阻滞、室性心动过速、室上速、室颤等。' },
+  { cat: '常用抢救药品', q: '甘露醇的主要作用机制是？', opts: ['A. 利尿+组织脱水', 'B. 碱化尿液', 'C. 补充能量', 'D. 抗心律失常'], ans: 0, exp: '甘露醇通过两种机制：①组织脱水作用（提高血浆渗透压，减轻组织水肿）②利尿作用（增加血容量后，扩张肾血管，肾小球滤过率升高）。' },
+  // 简易呼吸器
+  { cat: '简易呼吸器', q: '简易呼吸器吸气时，进气阀（E）处于什么状态？', opts: ['A. 开放', 'B. 关闭', 'C. 半开', 'D. 不变'], ans: 1, exp: '吸气过程：挤压球体产生正压，鸭嘴阀（F）开放，进气阀（E）关闭，同时鸭嘴阀（F）向下移动，堵住呼气阀G，气体进入人体。' },
+  { cat: '简易呼吸器', q: '成人无自主呼吸时使用简易呼吸器，通气频率是多少？', opts: ['A. 每4秒1次（15次/min）', 'B. 每6秒1次（10次/min）', 'C. 每8秒1次（8次/min）', 'D. 按30:2比例'], ans: 1, exp: '无自主呼吸成人患者，每6秒给予一次人工通气（即10次/min）。如果没有建立高级气道则按30:2的比例进行按压—通气。' },
+  { cat: '简易呼吸器', q: '有氧条件下使用简易呼吸器，配有储氧袋时，氧浓度可达？', opts: ['A. 40%～60%', 'B. 60%～80%', 'C. 80%～90%', 'D. 95%～99%'], ans: 3, exp: '连接氧气，调节氧流量（10L/min），使储氧袋充盈，有储氧袋时，氧浓度可达95%～99%。' },
+  { cat: '简易呼吸器', q: '简易呼吸器使用后，其余各部件（除储氧袋）应如何消毒？', opts: ['A. 75%酒精擦拭', 'B. 500mg/L含氯消毒液浸泡30分钟', 'C. 紫外线照射', 'D. 高压灭菌'], ans: 1, exp: '储氧袋用75%酒精擦试，其余各部件充分拆卸，排出面罩气体，流动水冲洗后使用500mg/L含氯消毒液浸泡消毒，作用时间30分钟，流动水冲洗干净后，用无菌巾擦干。' },
+  // 除颤仪
+  { cat: '除颤仪操作', q: '室颤应采用哪种除颤方式？', opts: ['A. 同步电复律', 'B. 非同步电复律', 'C. 药物复律', 'D. 起搏治疗'], ans: 1, exp: '室颤为绝对适应证，一旦发生应立即予以非同步电复律（手动除颤）。非同步电复律用于室颤、室扑、无脉性室速。' },
+  { cat: '除颤仪操作', q: '除颤电极板A（Apex）放置在哪里？', opts: ['A. 胸骨右缘锁骨下', 'B. 左乳头外下方或左腋前线第5肋间', 'C. 胸骨正中', 'D. 右腋前线'], ans: 1, exp: 'A（Apex）电极板放在左乳头外下方或左腋前线第5肋间（心尖部）；S（Sternum）电极板放在胸骨右缘锁骨下或2～3肋间（心底部）。' },
+  { cat: '除颤仪操作', q: '安装起搏器的患者进行除颤时，电极板距离起搏器应至少多远？', opts: ['A. 2.5cm', 'B. 5cm', 'C. 10cm', 'D. 15cm'], ans: 2, exp: '安装起搏器的患者除颤时，电极板距离起搏器至少10cm。' },
+  // CPR
+  { cat: '心肺脑复苏（CPR）', q: '高质量CPR中，成人胸外按压深度和频率？', opts: ['A. 至少3cm，80～100次/min', 'B. 至少5cm，100～120次/min', 'C. 至少6cm，120～140次/min', 'D. 至少4cm，60～80次/min'], ans: 1, exp: '高质量CPR要求：用力（按压深度至少5cm）并快速（100～120次/min）按压，并尽量避免完全回弹。' },
+  { cat: '心肺脑复苏（CPR）', q: 'CPR可逆病因中"5H"不包括哪项？', opts: ['A. 低血容量（Hypovolemia）', 'B. 低体温（Hypothermia）', 'C. 心包填塞（Tamponade）', 'D. 缺氧（Hypoxia）'], ans: 2, exp: '5H包括：低血容量、缺氧、氢离子/酸中毒、低钾/高钾血症、低体温。心包填塞（Tamponade）属于5T，不属于5H。' },
+  { cat: '心肺脑复苏（CPR）', q: 'CPR中，ROSC（自主循环恢复）的判断指标是？', opts: ['A. 瞳孔缩小', 'B. PetCO₂突然持续升高≥40mmHg', 'C. 皮肤颜色恢复', 'D. 患者意识恢复'], ans: 1, exp: 'ROSC判断：①脉搏和血压恢复 ②PetCO₂突然持续升高（通常≥40mmHg）③动脉内监测到的自发性动脉压力波。' },
+  { cat: '心肺脑复苏（CPR）', q: '建立高级气道后，人工通气频率为？', opts: ['A. 每4秒1次', 'B. 每6秒1次（10次/min）', 'C. 按30:2比例', 'D. 每8秒1次'], ans: 1, exp: '建立高级气道（气管插管等）后，每6秒进行1次人工通气（10次/min），并持续进行胸外心脏按压，不再按30:2的比例。' }
+];
+
+// ════════════════════════════════════════════
+// STATE
+// ════════════════════════════════════════════
+let currentSection = 'home';
+let currentCatId = 0;
+let currentCardIdx = 0;
+let isFlipped = false;
+
+let quizPool = [];
+let quizIdx = 0;
+let quizScore = 0;
+let quizSelectedCats = [];
+
+// ════════════════════════════════════════════
+// INIT
+// ════════════════════════════════════════════
+function init() {
+  // Build home categories
+  const grid = document.getElementById('categories-grid');
+  categories.forEach(cat => {
+    const div = document.createElement('div');
+    div.className = `category-card cat-${cat.id}`;
+    div.onclick = () => openCategory(cat.id);
+    div.innerHTML = `
+      <div class="category-emoji">${cat.emoji}</div>
+      <div class="category-title">${cat.title}</div>
+      <div class="category-sub">${cat.sub}</div>
+      <div class="category-count">${cat.cards.length} 张闪卡</div>
+    `;
+    grid.appendChild(div);
+  });
+
+  // Build quiz cat select
+  const sel = document.getElementById('quiz-cat-select');
+  categories.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-cat-btn selected';
+    btn.dataset.id = cat.id;
+    btn.innerHTML = `${cat.emoji} ${cat.title}`;
+    btn.onclick = () => {
+      btn.classList.toggle('selected');
+    };
+    sel.appendChild(btn);
+  });
+}
+
+// ════════════════════════════════════════════
+// NAVIGATION
+// ════════════════════════════════════════════
+function showSection(name) {
+  ['home','cards','quiz'].forEach(s => {
+    document.getElementById('section-'+s).classList.toggle('hidden', s !== name);
+  });
+  document.querySelectorAll('.nav-tab').forEach((t,i) => {
+    t.classList.toggle('active', ['home','cards','quiz'][i] === name);
+  });
+  currentSection = name;
+  if (name === 'quiz') resetQuiz();
+}
+
+// ════════════════════════════════════════════
+// FLASHCARDS
+// ════════════════════════════════════════════
+function openCategory(id) {
+  currentCatId = id;
+  currentCardIdx = 0;
+  isFlipped = false;
+  const cat = categories[id];
+  document.getElementById('fc-title').textContent = `${cat.emoji} ${cat.title}`;
+  renderCard();
+  buildCardList();
+  showSection('cards');
+}
+
+function renderCard() {
+  const cat = categories[currentCatId];
+  const card = cat.cards[currentCardIdx];
+  isFlipped = false;
+  document.getElementById('fc-card').classList.remove('flipped');
+  document.getElementById('fc-question').textContent = card.q;
+  document.getElementById('fc-answer').style.whiteSpace = 'pre-line';
+  document.getElementById('fc-answer').textContent = card.a;
+  const pct = ((currentCardIdx+1)/cat.cards.length*100).toFixed(0);
+  document.getElementById('fc-progress').textContent = `${currentCardIdx+1} / ${cat.cards.length}`;
+  document.getElementById('fc-bar').style.width = pct + '%';
+}
+
+function flipCard() {
+  isFlipped = !isFlipped;
+  document.getElementById('fc-card').classList.toggle('flipped', isFlipped);
+}
+
+function nextCard() {
+  const cat = categories[currentCatId];
+  currentCardIdx = (currentCardIdx + 1) % cat.cards.length;
+  renderCard();
+}
+
+function prevCard() {
+  const cat = categories[currentCatId];
+  currentCardIdx = (currentCardIdx - 1 + cat.cards.length) % cat.cards.length;
+  renderCard();
+}
+
+function buildCardList() {
+  const cat = categories[currentCatId];
+  const list = document.getElementById('fc-list');
+  list.innerHTML = '<div style="font-size:12px;color:var(--gray-500);margin-bottom:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;">全部卡片（点击展开答案）</div>';
+  cat.cards.forEach((c, i) => {
+    const item = document.createElement('div');
+    item.className = 'card-list-item';
+    item.innerHTML = `
+      <div class="card-num">${i+1}</div>
+      <div style="flex:1">
+        <div class="card-list-q">${c.q}</div>
+        <div class="card-list-a" style="white-space:pre-line">${c.a}</div>
+      </div>
+    `;
+    item.onclick = () => {
+      item.classList.toggle('open');
+      currentCardIdx = i;
+      renderCard();
+    };
+    list.appendChild(item);
+  });
+}
+
+// ════════════════════════════════════════════
+// QUIZ
+// ════════════════════════════════════════════
+function resetQuiz() {
+  document.getElementById('quiz-start').style.display = 'block';
+  document.getElementById('quiz-question-wrap').style.display = 'none';
+  document.getElementById('quiz-result').style.display = 'none';
+  quizIdx = 0; quizScore = 0;
+}
+
+function startQuiz() {
+  const selectedBtns = document.querySelectorAll('.quiz-cat-btn.selected');
+  quizSelectedCats = Array.from(selectedBtns).map(b => parseInt(b.dataset.id));
+  if (quizSelectedCats.length === 0) {
+    alert('请至少选择一个场景');
+    return;
+  }
+  const catNames = quizSelectedCats.map(id => categories[id].title);
+  quizPool = shuffle(quizQuestions.filter(q => catNames.includes(q.cat)));
+  if (quizPool.length === 0) { alert('所选场景暂无题目'); return; }
+  quizIdx = 0; quizScore = 0;
+  document.getElementById('quiz-start').style.display = 'none';
+  document.getElementById('quiz-question-wrap').style.display = 'block';
+  document.getElementById('quiz-result').style.display = 'none';
+  renderQuizQuestion();
+}
+
+function renderQuizQuestion() {
+  const q = quizPool[quizIdx];
+  const total = quizPool.length;
+  document.getElementById('quiz-progress-text').textContent = `第 ${quizIdx+1} 题 / 共 ${total} 题`;
+  document.getElementById('quiz-score-badge').textContent = `得分: ${quizScore}`;
+  document.getElementById('quiz-progress-bar').style.width = (quizIdx/total*100)+'%';
+  document.getElementById('quiz-cat-tag').textContent = q.cat;
+  document.getElementById('quiz-q-text').textContent = q.q;
+  const optWrap = document.getElementById('quiz-options');
+  optWrap.innerHTML = '';
+  const letters = ['A','B','C','D'];
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-option';
+    btn.innerHTML = `<span class="opt-letter">${letters[i]}</span><span>${opt}</span>`;
+    btn.onclick = () => checkAnswer(i, q.ans, q.exp);
+    optWrap.appendChild(btn);
+  });
+  document.getElementById('quiz-explanation').className = 'quiz-explanation';
+  document.getElementById('quiz-next-btn').className = 'quiz-next-btn';
+}
+
+function checkAnswer(chosen, correct, exp) {
+  const opts = document.querySelectorAll('.quiz-option');
+  opts.forEach((o,i) => {
+    o.classList.add('disabled');
+    if (i === correct) o.classList.add('correct');
+    else if (i === chosen && chosen !== correct) o.classList.add('wrong');
+  });
+  if (chosen === correct) quizScore++;
+  document.getElementById('quiz-score-badge').textContent = `得分: ${quizScore}`;
+  const expEl = document.getElementById('quiz-explanation');
+  expEl.innerHTML = `<strong>解析：</strong>${exp}`;
+  expEl.classList.add('show');
+  const nextBtn = document.getElementById('quiz-next-btn');
+  nextBtn.textContent = quizIdx < quizPool.length-1 ? '下一题 →' : '查看结果';
+  nextBtn.classList.add('show');
+}
+
+function nextQuizQuestion() {
+  quizIdx++;
+  if (quizIdx >= quizPool.length) {
+    showQuizResult();
+  } else {
+    renderQuizQuestion();
+  }
+}
+
+function showQuizResult() {
+  document.getElementById('quiz-question-wrap').style.display = 'none';
+  const result = document.getElementById('quiz-result');
+  result.style.display = 'block';
+  const pct = Math.round(quizScore / quizPool.length * 100);
+  document.getElementById('result-pct').textContent = pct + '%';
+  document.querySelector('.result-circle').style.setProperty('--pct', pct+'%');
+  let msg = '', sub = '';
+  if (pct >= 90) { msg = '🏆 优秀！掌握扎实'; sub = `答对 ${quizScore}/${quizPool.length} 题，临床应用没问题！`; }
+  else if (pct >= 70) { msg = '👍 良好，继续加油'; sub = `答对 ${quizScore}/${quizPool.length} 题，再巩固一下薄弱点。`; }
+  else if (pct >= 50) { msg = '📖 需要复习'; sub = `答对 ${quizScore}/${quizPool.length} 题，建议回看闪卡再来一次。`; }
+  else { msg = '💪 加油，多练习'; sub = `答对 ${quizScore}/${quizPool.length} 题，先仔细看知识点再自测。`; }
+  document.getElementById('result-message').textContent = msg;
+  document.getElementById('result-sub').textContent = sub;
+}
+
+function retryQuiz() {
+  quizPool = shuffle(quizPool);
+  quizIdx = 0; quizScore = 0;
+  document.getElementById('quiz-result').style.display = 'none';
+  document.getElementById('quiz-question-wrap').style.display = 'block';
+  renderQuizQuestion();
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length-1; i > 0; i--) {
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+
+// ── run ──
+init();
+</script>
+</body>
+</html>
